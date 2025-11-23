@@ -1,4 +1,4 @@
-# [drawpen.app](https://drawpen.app) (DrawPen Website)
+# DrawPen Website
 
 Repository for the [DrawPen](https://github.com/DmytroVasin/DrawPen) landing website, built with **Astro** and deployed via **Vercel**.
 
@@ -16,7 +16,7 @@ Run `npm run dev` to start the website in dev mode.
 ## Building for Production
 
 * `npm run build` - Create a production build
-* `npm run build` - Final preview the build
+* `npm run preview` - Final preview the build
 
 ## Deployment
 
