@@ -1,11 +1,271 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const keybindings = [
+  { command: "Show / Hide app", keys: ["CMD/CTRL", "SHIFT", "A"], note: "Global shortcut" },
+  { command: "Activate Pen", keys: ["1"] },
+  { command: "Shapes (arrow / box / etc.)", keys: ["2"] },
+  { command: "Text tool", keys: ["3"] },
+  { command: "Highlighter", keys: ["4"] },
+  { command: "Laser pointer", keys: ["5"] },
+  { command: "Eraser", keys: ["6"] },
+  { command: "Switch color", keys: ["7"] },
+  { command: "Switch thickness", keys: ["8"] },
+  { command: "Show / Hide toolbar", keys: ["CMD/CTRL", "T"] },
+  { command: "Toggle whiteboard", keys: ["CMD/CTRL", "E"] },
+  { command: "Clear desk", keys: ["CMD/CTRL", "K"] },
+  { command: "Open settings", keys: ["CMD/CTRL", ","] },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="DrawPen – simple screen annotation for macOS, Windows & Linux"
+  description="DrawPen is a free, open-source tool that lets you draw on top of any screen – perfect for live presentations, calls, tutorials and demos."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <div class="hero-badge-row">
+        <div class="hero-badge">Free & Open Source</div>
+        <div>Draw on top of any screen in seconds.</div>
+      </div>
+
+      <h1 class="hero-title">
+        Simple screen annotation<br />
+        for any presentation
+      </h1>
+
+      <p class="hero-subtitle">
+        DrawPen lets you sketch, highlight and annotate directly on your screen –
+        across macOS, Windows and Linux. Ideal for live demos, online classes, remote calls and more.
+      </p>
+
+      <div class="hero-ctas">
+        <a
+          class="btn btn-primary"
+          href="https://github.com/DmytroVasin/DrawPen/releases"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Download DrawPen
+        </a>
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/DmytroVasin/DrawPen"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View on GitHub
+        </a>
+      </div>
+
+      <div class="hero-platforms">
+        <span>Available on:</span>
+        <span class="hero-platform-pill">macOS</span>
+        <span class="hero-platform-pill">Windows</span>
+        <span class="hero-platform-pill">Linux</span>
+      </div>
+    </div>
+
+    <div class="hero-side-card">
+      <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+        Quick preview
+      </div>
+      <div class="hero-screenshot-frame">
+        <!-- Заменишь src на свой реальный скрин -->
+        <img src="/drawpen-hero.png" alt="DrawPen screenshot" loading="lazy" />
+      </div>
+      <div style="margin-top: 10px; font-size: 12px; color: var(--text-muted);">
+        One global shortcut to show DrawPen, and your tools are ready – pen, shapes, text, laser, whiteboard and more.
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="section-header">
+      <h2 class="section-title">Key features</h2>
+      <p class="section-subtitle">Everything you need for quick, clean annotations.</p>
+    </div>
+
+    <div class="features-grid">
+      <article class="feature-card">
+        <h3 class="feature-title">Draw on top of any screen</h3>
+        <p class="feature-body">
+          Annotate anything that’s on your display: slides, browser, IDE, design tools, videos – no
+          special “presentation mode” required.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Multiple tools, one shortcut</h3>
+        <p class="feature-body">
+          Switch between pen, shapes, text, highlighter, laser and eraser with single-key shortcuts.
+          Stay focused on the audience, not on menus.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Whiteboard mode</h3>
+        <p class="feature-body">
+          Instantly toggle a clean whiteboard on top of your screen for quick sketches, diagrams or
+          brainstorming during a call.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Cross-platform</h3>
+        <p class="feature-body">
+          Built with Electron and available for macOS, Windows and Linux, so your annotation workflow
+          stays the same across machines.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Keyboard-first workflow</h3>
+        <p class="feature-body">
+          All core actions are mapped to simple keybindings, optimized for live presentations and
+          remote sessions where speed matters.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Open source & MIT-licensed</h3>
+        <p class="feature-body">
+          DrawPen is fully open source and MIT-licensed. Use it, fork it, contribute back or package
+          it for your favorite platform.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Installation -->
+  <section class="section" id="installation">
+    <div class="section-header">
+      <h2 class="section-title">Install in a few seconds</h2>
+      <p class="section-subtitle">
+        Download from GitHub Releases or use your favorite package manager.
+      </p>
+    </div>
+
+    <div class="install-grid">
+      <div class="install-card">
+        <div class="install-label">Direct download</div>
+        <p class="feature-body" style="margin-bottom: 8px;">
+          All builds are available on GitHub Releases.
+        </p>
+        <a
+          class="btn btn-primary"
+          href="https://github.com/DmytroVasin/DrawPen/releases"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Go to Releases
+        </a>
+      </div>
+
+      <div class="install-card">
+        <div class="install-label">macOS (Homebrew)</div>
+        <pre class="code-block"><code>brew install --cask drawpen</code></pre>
+        <div class="install-label" style="margin-top: 10px;">Windows (Scoop)</div>
+        <pre class="code-block"><code>scoop bucket add extras
+scoop install extras/drawpen</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keybindings -->
+  <section class="section" id="keybindings">
+    <div class="section-header">
+      <h2 class="section-title">Keyboard shortcuts</h2>
+      <p class="section-subtitle">
+        Designed to be memorized quickly and stay out of your way while presenting.
+      </p>
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table class="keybindings-table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Shortcut</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          {keybindings.map((row) => (
+            <tr>
+              <td>{row.command}</td>
+              <td>
+                {row.keys.map((k) => (
+                  <span class="key-pill">{k}</span>
+                ))}
+              </td>
+              <td>{row.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ / About -->
+  <section class="section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">FAQ & About</h2>
+      <p class="section-subtitle">
+        A few common questions about DrawPen.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <article class="feature-card">
+        <h3 class="feature-title">What is DrawPen?</h3>
+        <p class="feature-body">
+          DrawPen is a simple screen annotation tool. It lets you draw, highlight and annotate
+          directly on your screen during presentations, video calls, recordings or in-person demos.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Is it really free?</h3>
+        <p class="feature-body">
+          Yes. DrawPen is completely free and open source, licensed under the MIT license. You can
+          use it for personal or commercial work.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Which platforms are supported?</h3>
+        <p class="feature-body">
+          Official builds are available for macOS, Windows and Linux. You can also build from source
+          if you prefer.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Where can I report issues?</h3>
+        <p class="feature-body">
+          If you find a bug or want to request a feature, open an issue on GitHub. Contributions are
+          very welcome – check the Contributing guide in the repository.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">Does it track any data?</h3>
+        <p class="feature-body">
+          DrawPen is a desktop app with no user tracking built in. Check the source code on GitHub
+          if you want to audit it yourself.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3 class="feature-title">How do I get updates?</h3>
+        <p class="feature-body">
+          New versions are published on GitHub Releases. You can also follow the project on GitHub to
+          be notified about updates and changelog entries.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "DrawPen – simple screen annotation tool",
+  description = "Draw on top of any screen. Free, open-source screen annotation tool for macOS, Windows and Linux.",
+} = Astro.props as Props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://drawpen.app" />
+    <meta property="og:image" content="/og-drawpen.png" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="app-header-inner">
+          <div class="app-header-row">
+            <a href="/" class="app-logo">
+              <div class="app-logo-mark">
+                <div class="app-logo-mark-inner"></div>
+              </div>
+              <div>
+                <div class="app-logo-text-main">DrawPen</div>
+                <div class="app-logo-text-sub">Screen annotation tool</div>
+              </div>
+            </a>
+
+            <nav class="app-nav">
+              <a href="#features">Features</a>
+              <a href="#installation">Download</a>
+              <a href="#keybindings">Shortcuts</a>
+              <a href="#faq">FAQ</a>
+              <a href="https://github.com/DmytroVasin/DrawPen" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="app-main-inner">
+          <slot />
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="app-footer-inner">
+          <div>© {new Date().getFullYear()} DrawPen. MIT-licensed & open-source.</div>
+          <div class="app-footer-links">
+            <a href="https://github.com/DmytroVasin/DrawPen" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href="https://github.com/DmytroVasin/DrawPen/releases" target="_blank" rel="noreferrer">
+              Releases
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
