@@ -1,23 +1,29 @@
 :root {
-  --bg: #0b0c0f;
-  --bg-elevated: #13151b;
-  --border-subtle: #242631;
-  --text: #f7f7f7;
-  --text-muted: #b0b3c0;
-  --accent: #3b82f6;
-  --accent-soft: rgba(59, 130, 246, 0.12);
-  --accent-hover: #4f8ef8;
-  --danger: #ef4444;
+  --bg-page: #f5f6fb;
+  --bg-card: #ffffff;
+  --bg-soft: #f9fafb;
 
-  --radius-lg: 18px;
-  --radius-md: 12px;
+  --border-subtle: #e5e7eb;
+  --border-strong: #d1d5db;
 
-  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.35);
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-soft: #9ca3af;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 22px 40px rgba(15, 23, 42, 0.08);
 
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
 
-  --content-width: 1080px;
+  --content-width: 1040px;
 }
 
 *,
@@ -26,8 +32,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -35,8 +40,8 @@ body {
 
 body {
   font-family: var(--font-sans);
-  background: radial-gradient(circle at top left, #1c1f2a 0, #05060a 45%, #020308 100%);
-  color: var(--text);
+  background: radial-gradient(circle at top left, #e5edff 0, #f5f6fb 42%, #f9fafb 100%);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -50,7 +55,9 @@ img {
   display: block;
 }
 
-/* Layout */
+/* -------------------------------------------------
+   Layout
+--------------------------------------------------- */
 
 .app-shell {
   min-height: 100vh;
@@ -62,9 +69,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(16px);
-  background: linear-gradient(to bottom, rgba(5, 6, 12, 0.9), rgba(5, 6, 12, 0.4));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(18px);
+  background: rgba(250, 250, 255, 0.9);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.9);
 }
 
 .app-header-inner,
@@ -76,8 +83,8 @@ img {
 }
 
 .app-main-inner {
-  padding-top: 28px;
-  padding-bottom: 48px;
+  padding-top: 32px;
+  padding-bottom: 60px;
 }
 
 .app-header-row {
@@ -86,6 +93,10 @@ img {
   justify-content: space-between;
   gap: 16px;
 }
+
+/* -------------------------------------------------
+   Logo
+--------------------------------------------------- */
 
 .app-logo {
   display: flex;
@@ -96,19 +107,28 @@ img {
 .app-logo-mark {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
-  background: conic-gradient(from 180deg at 50% 50%, #38bdf8, #6366f1, #a855f7, #f97316, #38bdf8);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #2563eb, #22c55e);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
 }
 
 .app-logo-mark-inner {
   width: 18px;
   height: 18px;
   border-radius: 6px;
-  background: #020617;
+  background: #ffffff;
+  position: relative;
+}
+
+.app-logo-mark-inner::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 4px;
+  border: 2px solid #2563eb;
 }
 
 .app-logo-text-main {
@@ -118,22 +138,34 @@ img {
 
 .app-logo-text-sub {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-soft);
 }
+
+/* -------------------------------------------------
+   Navigation
+--------------------------------------------------- */
 
 .app-nav {
   display: flex;
   align-items: center;
   gap: 18px;
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-soft);
+}
+
+.app-nav a {
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
 }
 
 .app-nav a:hover {
-  color: var(--text);
+  color: var(--text-main);
+  border-bottom-color: rgba(148, 163, 184, 0.65);
 }
 
-/* Buttons */
+/* -------------------------------------------------
+   Buttons
+--------------------------------------------------- */
 
 .btn {
   display: inline-flex;
@@ -157,64 +189,68 @@ img {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-  border-color: rgba(148, 163, 184, 0.2);
-  color: #0b1120;
-  box-shadow: 0 14px 35px rgba(37, 99, 235, 0.55);
+  border-color: rgba(37, 99, 235, 0.65);
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.65);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
 }
 
 .btn-ghost {
-  border-color: rgba(148, 163, 184, 0.28);
-  background: rgba(15, 23, 42, 0.7);
+  border-color: var(--border-subtle);
+  background: #ffffff;
   color: var(--text-muted);
 }
 
 .btn-ghost:hover {
-  color: var(--text);
-  background: rgba(15, 23, 42, 0.95);
+  background: #f9fafb;
+  border-color: var(--border-strong);
+  color: var(--text-main);
 }
 
-/* Hero */
+/* -------------------------------------------------
+   Hero
+--------------------------------------------------- */
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 38px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 40px;
   align-items: center;
-  margin-top: 32px;
-  margin-bottom: 56px;
+  margin-top: 16px;
+  margin-bottom: 60px;
 }
 
 .hero-badge-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-soft);
 }
 
 .hero-badge {
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
   font-size: 12px;
 }
 
 .hero-title {
-  font-size: 38px;
-  line-height: 1.1;
-  margin: 0 0 14px;
+  font-size: 36px;
+  line-height: 1.05;
+  margin: 0 0 12px;
 }
 
 .hero-subtitle {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-muted);
   max-width: 32rem;
 }
@@ -224,39 +260,47 @@ img {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .hero-platforms {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-soft);
 }
 
 .hero-platform-pill {
   padding: 3px 9px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
 }
+
+/* -------------------------------------------------
+   Hero side card
+--------------------------------------------------- */
 
 .hero-side-card {
   border-radius: var(--radius-lg);
-  background: radial-gradient(circle at top, #111827, #020617);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
-  padding: 16px 16px 18px;
+  padding: 14px 14px 18px;
 }
 
 .hero-screenshot-frame {
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at top left, #1f2937, #020617);
+  background: var(--bg-soft);
   aspect-ratio: 16 / 10;
 }
 
-/* Sections */
+/* -------------------------------------------------
+   Sections
+--------------------------------------------------- */
 
 .section {
   margin-bottom: 52px;
@@ -267,7 +311,7 @@ img {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .section-title {
@@ -280,19 +324,21 @@ img {
   color: var(--text-muted);
 }
 
-/* Feature grid */
+/* -------------------------------------------------
+   Feature cards
+--------------------------------------------------- */
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 .feature-card {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
-  background: rgba(15, 23, 42, 0.9);
-  padding: 14px 14px 16px;
+  background: #ffffff;
+  padding: 14px 16px 16px;
 }
 
 .feature-title {
@@ -305,7 +351,9 @@ img {
   color: var(--text-muted);
 }
 
-/* Installation */
+/* -------------------------------------------------
+   Installation cards
+--------------------------------------------------- */
 
 .install-grid {
   display: grid;
@@ -316,78 +364,126 @@ img {
 .install-card {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
-  background: #020617;
-  padding: 14px 14px 12px;
+  background: #ffffff;
+  padding: 14px 16px 14px;
 }
 
 .install-label {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-soft);
   margin-bottom: 6px;
 }
 
 .code-block {
   font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 13px;
-  padding: 6px 8px;
-  border-radius: 8px;
-  background: #020617;
-  border: 1px solid #111827;
+  padding: 7px 9px;
+  border-radius: var(--radius-sm);
+  background: #f9fafb;
+  border: 1px solid var(--border-subtle);
   overflow-x: auto;
 }
 
-/* Keybindings table */
+/* -------------------------------------------------
+   FAQ (clean, minimal, single column)
+--------------------------------------------------- */
 
-.keybindings-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
+.faq-wrapper {
+  max-width: 720px;
 }
 
-.keybindings-table th,
-.keybindings-table td {
-  padding: 8px 10px;
-  text-align: left;
+.faq-intro {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
 }
 
-.keybindings-table thead {
-  background: rgba(15, 23, 42, 0.95);
+.faq-intro p {
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
-.keybindings-table tbody tr:nth-child(odd) {
-  background: rgba(15, 23, 42, 0.7);
-}
-
-.key-pill {
+.faq-intro-note {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-width: 26px;
-  padding: 2px 8px;
+  gap: 6px;
+  font-size: 13px;
+  padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: #020617;
-  font-size: 11px;
+  background: var(--accent-soft);
+  color: #1d4ed8;
+  margin-top: 6px;
 }
 
-/* Footer */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.faq-item {
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  padding: 4px 10px;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 8px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.faq-chevron {
+  font-size: 18px;
+  color: var(--text-soft);
+  transition: transform 0.15s ease;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(90deg);
+}
+
+.faq-body {
+  padding: 0 6px 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------
+   Footer
+--------------------------------------------------- */
 
 .app-footer {
   margin-top: auto;
-  padding-bottom: 18px;
-  border-top: 1px solid rgba(148, 163, 184, 0.25);
-  background: radial-gradient(circle at top, #020617, #020617);
+  padding-bottom: 16px;
+  border-top: 1px solid rgba(209, 213, 219, 0.9);
+  background: #ffffff;
 }
 
 .app-footer-inner {
-  padding-top: 16px;
+  padding-top: 14px;
   padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-soft);
 }
 
 .app-footer-links {
@@ -395,7 +491,9 @@ img {
   gap: 12px;
 }
 
-/* Responsive */
+/* -------------------------------------------------
+   Responsive
+--------------------------------------------------- */
 
 @media (max-width: 900px) {
   .hero {
@@ -407,7 +505,7 @@ img {
   }
 
   .features-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .install-grid {
@@ -421,10 +519,6 @@ img {
   .app-footer-inner {
     padding-left: 14px;
     padding-right: 14px;
-  }
-
-  .features-grid {
-    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero-title {

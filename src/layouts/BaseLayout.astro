@@ -8,7 +8,7 @@ export interface Props {
 
 const {
   title = "DrawPen – simple screen annotation tool",
-  description = "Draw on top of any screen. Free, open-source screen annotation tool for macOS, Windows and Linux.",
+  description = "DrawPen is a free, open-source tool that lets you draw on top of any screen – perfect for live presentations, calls, tutorials and demos.",
 } = Astro.props as Props;
 ---
 
@@ -24,10 +24,13 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://drawpen.app" />
     <meta property="og:image" content="/og-drawpen.png" />
+
     <link rel="icon" href="/favicon.ico" />
   </head>
+
   <body>
     <div class="app-shell">
+      <!-- Header -->
       <header class="app-header">
         <div class="app-header-inner">
           <div class="app-header-row">
@@ -44,7 +47,6 @@ const {
             <nav class="app-nav">
               <a href="#features">Features</a>
               <a href="#installation">Download</a>
-              <a href="#keybindings">Shortcuts</a>
               <a href="#faq">FAQ</a>
               <a href="https://github.com/DmytroVasin/DrawPen" target="_blank" rel="noreferrer">
                 GitHub
@@ -54,20 +56,31 @@ const {
         </div>
       </header>
 
+      <!-- Main -->
       <main class="app-main">
         <div class="app-main-inner">
           <slot />
         </div>
       </main>
 
+      <!-- Footer -->
       <footer class="app-footer">
         <div class="app-footer-inner">
           <div>© {new Date().getFullYear()} DrawPen. MIT-licensed & open-source.</div>
+
           <div class="app-footer-links">
-            <a href="https://github.com/DmytroVasin/DrawPen" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/DmytroVasin/DrawPen"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
-            <a href="https://github.com/DmytroVasin/DrawPen/releases" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/DmytroVasin/DrawPen/releases"
+              target="_blank"
+              rel="noreferrer"
+            >
               Releases
             </a>
           </div>
