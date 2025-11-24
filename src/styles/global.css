@@ -106,30 +106,12 @@ img {
 }
 
 .app-logo-mark {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   border-radius: 9px;
-  background: linear-gradient(135deg, #2563eb, #22c55e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
-}
-
-.app-logo-mark-inner {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  background: #ffffff;
-  position: relative;
-}
-
-.app-logo-mark-inner::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 4px;
-  border: 2px solid #2563eb;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .app-logo-text-main {

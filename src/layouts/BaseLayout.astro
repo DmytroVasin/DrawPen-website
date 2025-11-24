@@ -30,7 +30,7 @@ const basePath = isEn ? "/en" : "/ua";
     <meta property="og:url" content={`https://drawpen.app${basePath}`} />
     <meta property="og:image" content="/og-drawpen.png" />
 
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" />
   </head>
 
   <body>
@@ -40,9 +40,8 @@ const basePath = isEn ? "/en" : "/ua";
         <div class="app-header-inner">
           <div class="app-header-row">
             <a href={basePath} class="app-logo">
-              <div class="app-logo-mark">
-                <div class="app-logo-mark-inner"></div>
-              </div>
+              <img src="/icon.png" alt="DrawPen logo" class="app-logo-mark" />
+
               <div>
                 <div class="app-logo-text-main">DrawPen</div>
                 <div class="app-logo-text-sub">
