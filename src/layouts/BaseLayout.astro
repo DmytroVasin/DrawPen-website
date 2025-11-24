@@ -51,38 +51,7 @@ const basePath = isEn ? "/en" : "/ua";
             </a>
 
             <nav class="app-nav">
-              <!-- Language switch -->
-              <a
-                href="/en"
-                class={`lang-link ${isEn ? "lang-link--active" : ""}`}
-              >
-                EN
-              </a>
-              <a
-                href="/ua"
-                class={`lang-link ${!isEn ? "lang-link--active" : ""}`}
-              >
-                UA
-              </a>
-
-              {isEn ? (
-                <>
-                  <a href="#use-cases">Use cases</a>
-                  <a href="#features">Features</a>
-                  <a href="#how-it-works">How it works</a>
-                  <a href="#install">Download</a>
-                  <a href="#faq">FAQ</a>
-                </>
-              ) : (
-                <>
-                  <a href="#use-cases">Для кого</a>
-                  <a href="#features">Можливості</a>
-                  <a href="#how-it-works">Як працює</a>
-                  <a href="#install">Завантажити</a>
-                  <a href="#faq">FAQ</a>
-                </>
-              )}
-
+              <a href="#faq">FAQ</a>
               <a
                 href="https://github.com/DmytroVasin/DrawPen"
                 target="_blank"
