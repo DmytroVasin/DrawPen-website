@@ -1,4 +1,5 @@
 ---
+import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -9,66 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
 
   <!-- HERO -->
-  <section>
-    <div>
-      <div>
-        <div>Free & Open Source</div>
-        <div>Draw on your screen in one shortcut.</div>
-      </div>
-
-      <h1>
-        Draw on your screen<br />
-        without changing your workflow
-      </h1>
-
-      <p>
-        DrawPen lets you sketch, highlight and annotate directly on your screen — perfect for
-        explaining ideas during calls, live coding sessions, product demos or classes.
-      </p>
-
-      <div>
-        <a
-         
-          href="https://github.com/DmytroVasin/DrawPen/releases"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Download DrawPen
-        </a>
-
-        <a
-         
-          href="https://github.com/DmytroVasin/DrawPen"
-          target="_blank"
-          rel="noreferrer"
-        >
-          View on GitHub
-        </a>
-      </div>
-
-      <div>
-        <span>Available on:</span>
-        <span>macOS</span>
-        <span>Windows</span>
-        <span>Linux</span>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        Quick preview
-      </div>
-
-      <div>
-        <img src="/drawpen-hero.png" alt="DrawPen in use" loading="lazy" />
-      </div>
-
-      <div>
-        One global shortcut to activate DrawPen and draw over slides, browser windows, IDEs
-        or anything else on your screen.
-      </div>
-    </div>
-  </section>
+  <Hero />
 
   <!-- USE CASES -->
   <section>

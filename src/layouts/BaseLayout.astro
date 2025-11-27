@@ -1,5 +1,5 @@
 ---
-import Hero from "../components/Hero.astro";
+import Header from "../components/Header.astro";
 import "../styles/global.css"
 
 export interface Props {
@@ -31,10 +31,10 @@ const {
 
   <body>
     <div>
-      <Hero />
+      <Header />
 
       <main>
-        <div>
+        <div class="mt-34">
           <slot />
         </div>
       </main>
