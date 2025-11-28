@@ -1,0 +1,8 @@
+{
+    "faqs": [
+        {
+            "title": "How do I start the app?",
+            "content": "Presentify is a macOS menu bar app, so it doesn't have a traditional window. To get started, click the Presentify icon in Launchpad or type 'Presentify' in Spotlight and press Return. After that, a small Presentify icon appears in the"
+        }
+    ]
+}

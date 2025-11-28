@@ -1,0 +1,29 @@
+---
+interface FAQ_Props {
+    title: string;
+    content: string;
+}
+
+const { title, content } = Astro.props as FAQ_Props;
+---
+
+<div class="p-6 faq-card">
+    <button 
+        class="group flex w-full items-center justify-between text-left cursor-pointer faq-toggle"
+        type="button"
+        aria-expanded="false"
+    >
+        <div class="flex items-center">
+            <span class="text-sm/6 font-medium text-gray-700 group-data-hover:text-gray-700/90">{title}</span>
+        </div>
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" class="shrink-0 size-5 fill-black/60 transition-transform duration-200 faq-arrow" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+
+    <div class="mt-3 text-sm/6 text-gray-500 hidden faq-content">
+        <div>
+            <p>{content}</p>
+        </div>
+    </div>
+</div>

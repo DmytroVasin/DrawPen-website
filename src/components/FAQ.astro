@@ -1,0 +1,42 @@
+---
+import FAQCard from "./FAQ_Card.astro";
+import FAQData from "../data/faq.json"
+---
+
+<section>
+    <div class="mx-auto mt-16 max-w-7xl px-4 py-8">
+        <div class="flex w-full justify-center flex-col lg:flex-row">
+            <div class="w-full lg:w-[60%]">
+                <div>
+                    <h2 class="text-2xl font-bold  mb-4 text-gray-700" id="getting-started">Getting Started</h2>
+                    <div class="divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 rounded-xl">
+                        {
+                            FAQData.faqs.map((faq) => {
+                                return (
+                                    <FAQCard title={faq.title} content={faq.content} />
+                                )
+                            })
+                         }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.faq-card').forEach(card => {
+            const toggle = card.querySelector('.faq-toggle') as HTMLDivElement;
+            const content = card.querySelector('.faq-content') as HTMLDivElement;
+            const arrow = card.querySelector('.faq-arrow') as HTMLDivElement;
+            if (toggle && content && arrow) {
+                toggle.addEventListener("click", () => {
+                    const isOpen = content.classList.toggle("hidden") === false;
+                    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                    arrow.style.transform = isOpen ? "rotate(-90deg)" : "rotate(0deg)";
+                });
+            }
+        });
+    });
+</script>
