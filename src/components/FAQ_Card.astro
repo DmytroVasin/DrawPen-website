@@ -13,8 +13,7 @@ const { title, content } = Astro.props as FAQ_Props;
             class="group flex w-full items-center justify-between text-left cursor-pointer faq-toggle"
             type="button"
             aria-expanded="false"
-            aria-controls={title.replace(/\s+/g, '-') + "-content"}
-        >
+            >
             <span class="text-sm/6 font-medium text-gray-700 group-data-hover:text-gray-700/90">
                 {title}
             </span>
@@ -40,7 +39,6 @@ const { title, content } = Astro.props as FAQ_Props;
     </dt>
 
     <dd 
-        id={title.replace(/\s+/g, '-') + "-content"}
         class="mt-3 text-sm/6 text-gray-500 hidden faq-content"
         aria-hidden="true"
     >
