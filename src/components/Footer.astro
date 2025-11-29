@@ -1,9 +1,18 @@
-<footer>
+<footer role="contentinfo">
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-10 sm:pt-18 lg:px-8 lg:pt-26">
         <div class="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
+
             <p class="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-                {new Date().getFullYear()}
-                <a href="https://github.com/DmytroVasin/DrawPen" class="hover:underline underline-offset-4">DrawPen</a>. 
+                <time datetime={new Date().getFullYear().toString()}>
+                    {new Date().getFullYear()}
+                </time>
+                <a 
+                    href="https://github.com/DmytroVasin/DrawPen" 
+                    class="hover:underline underline-offset-4"
+                    rel="noopener noreferrer"
+                >
+                    DrawPen
+                </a>. 
                 MIT-licensed & open-source.
             </p>
         </div>
