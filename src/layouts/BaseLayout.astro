@@ -3,26 +3,27 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css"
 
-export interface Props {
-  title?: string;
-  description?: string;
+interface Props {
+  lang: string,
 }
 
-const {
-  title = "DrawPen - simple screen annotation tool",
-  description = "DrawPen is a free, open-source tool that lets you draw on top of any screen – perfect for presentations, classes, live coding and remote meetings.",
-} = Astro.props as Props;
+const { lang = "en" } = Astro.props as Props;
+
+const METADATA = {
+  title: "DrawPen - simple screen annotation tool",
+  description: "DrawPen is a free, open-source tool that lets you draw on top of any screen - perfect for presentations, classes, live coding and remote meetings.",
+}
 ---
 
-<html lang='en'>
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <title>{title}</title>
+    <title>{METADATA.title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
+    <meta name="description" content={METADATA.description} />
 
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={METADATA.title} />
+    <meta property="og:description" content={METADATA.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://drawpen.app" />
     <meta property="og:image" content="/og-drawpen.png" />
