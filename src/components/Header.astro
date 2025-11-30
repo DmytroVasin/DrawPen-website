@@ -1,0 +1,40 @@
+<section class="relative flex flex-col items-center px-8 bg-linear-210 from-teal-400 from-10% via-blue-500 via-50% to-purple-600 to-90%">
+    <header class="z-10 relative w-full max-w-6xl mt-6">
+        <nav class="flex justify-between items-center" aria-label="Main navigation">
+            <a href="/" class="flex items-center gap-1.5" aria-label="DrawPen - Home">
+                <img alt="DrawPen Icon" src="/icon.png" class="w-12 h-12" loading="lazy">
+                <span class="text-white font-semibold text-lg">DrawPen</span>
+            </a>
+            <ul class="flex items-center gap-6">
+                <li>
+                    <a href="#faq" class="text-white">FAQ</a>
+                </li>
+                <li>
+                    <a href="https://github.com/DmytroVasin/DrawPen" target="_blank" rel="noopener noreferrer" class="text-white" aria-label="DrawPen GitHub repository">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="flex-1 flex flex-col items-center justify-center text-center py-12 md:py-32 max-w-full w-lg z-10 relative">
+        <h1 class="text-4xl/12 md:text-5xl/16 text-white mb-4">Annotate your screen</h1>
+        <p class="text-2xl text-white">An open-source screen annotation tool built with web technology.</p>
+        <div class="w-md mx-8 mt-8">
+            <a href="https://github.com/DmytroVasin/DrawPen" class="text-xs text-white" aria-label="View DrawPen on GitHub">View and contribute on GitHub</a>
+        </div>
+    </div>
+
+    <div class="absolute top-0 -bottom-px left-0 w-full overflow-hidden" aria-hidden="true">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[190vw] pb-[4.5%] [background:url(/header_figure.svg)_bottom] bg-cover! -mb-[3px]"></div>
+    </div>
+
+    <figure class="relative -bottom-px z-50 max-w-md w-full shadow bg-white rounded-sm mx-8 -mb-4">
+        <img 
+            src="app-light.webp" 
+            alt="DrawPen toolbar interface showing annotation tools" 
+            class="w-full h-auto block rounded-sm"
+            loading="lazy"
+        />
+        <figcaption class="sr-only">DrawPen toolbar with drawing and annotation controls</figcaption>
+    </figure>
+</section>

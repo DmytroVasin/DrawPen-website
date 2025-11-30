@@ -1,0 +1,24 @@
+{
+    "faqs": [
+        {
+            "title": "DrawPen is a desktop app that runs locally on your machine.",
+            "content": "It doesn’t try to replace your presentation software — it just adds a simple annotation layer on top of whatever you're already using."
+        },
+        {
+            "title": "Is DrawPen free?",
+            "content": "Yes. DrawPen is free and open source under the MIT license."
+        },
+        {
+            "title": "Which platforms are supported?",
+            "content": "macOS, Windows and Linux. You can download builds from GitHub Releases or install via package managers like Homebrew, Scoop and AUR."
+        },
+        {
+            "title": "Can I customize shortcuts?",
+            "content": "Yes. There is a dedicated settings page where you can adjust keybindings for global activation and tools."
+        },
+        {
+            "title": "Where can I report bugs or suggest features?",
+            "content": "Issues and feature requests are tracked on GitHub. Open an issue in the DrawPen repository with a short description and, if possible, steps to reproduce."
+        }
+    ]
+}
