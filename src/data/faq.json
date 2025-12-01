@@ -1,85 +1,72 @@
 {
   "faqs": [
     {
-      "title": "DrawPen is a desktop app that runs locally on your machine.",
-      "content": "It doesn’t try to replace your presentation software — it just adds a simple annotation layer on top of whatever you're already using."
+      "title": "What is DrawPen?",
+      "content": "DrawPen is a desktop application that operates locally on your device. It does not replace your presentation software; instead, it provides a simple annotation layer that works on top of any application you are using."
     },
     {
-      "title": "Is DrawPen free?",
-      "content": "Yes. DrawPen is free and open source under the MIT license."
+      "title": "Is DrawPen free to use?",
+      "content": "Yes. DrawPen is distributed free of charge and is fully open source under the MIT license."
     },
     {
-      "title": "Which platforms are supported?",
-      "content": "macOS, Windows and Linux. You can download builds from GitHub Releases or install via package managers like Homebrew, Scoop and AUR."
+      "title": "Which operating systems are supported?",
+      "content": "DrawPen is available on macOS, Windows and Linux. Installers can be downloaded from GitHub Releases or installed via supported package managers such as Homebrew or Scoop."
     },
     {
-      "title": "Can I customize shortcuts?",
-      "content": "Yes. There is a dedicated settings page where you can adjust keybindings for global activation and tools."
+      "title": "Can I configure keyboard shortcuts?",
+      "content": "Yes. The application includes a settings interface where global activation shortcuts and tool-specific keybindings can be customized."
     },
     {
-      "title": "Where can I report bugs or suggest features?",
-      "content": "Issues and feature requests are tracked on GitHub. Open an issue in the DrawPen repository with a short description and, if possible, steps to reproduce."
+      "title": "How can I report an issue or request a new feature?",
+      "content": "All bug reports and feature requests are managed through GitHub Issues. Open a new issue in the DrawPen repository and include a concise description and, if relevant, reproduction steps."
     },
-
     {
       "title": "How do I install DrawPen?",
-      "content": "Download from GitHub Releases. On macOS use Homebrew (drawpen cask), on Windows use Scoop, and all platforms support manual installation."
+      "content": "Download your platform’s installer from GitHub Releases. macOS users may install the Homebrew cask, Windows users may use Scoop, and all platforms support manual installation."
     },
     {
-      "title": "How do I show or hide DrawPen?",
-      "content": "Use CMD/CTRL + SHIFT + A to toggle the overlay."
+      "title": "How do I show or hide the DrawPen overlay?",
+      "content": "Use CMD/CTRL + SHIFT + A to toggle the annotation overlay on or off."
     },
     {
-      "title": "On which platforms does DrawPen work?",
-      "content": "DrawPen works on macOS, Windows, and Linux. Installers are available on GitHub."
+      "title": "What drawing tools are included?",
+      "content": "The application provides Pen, Shapes, Text, Highlighter, Laser and Eraser tools. Each tool can be activated using number-key shortcuts."
     },
     {
-      "title": "What tools are available for drawing?",
-      "content": "Pen, Shapes, Text, Highlighter, Laser, and Eraser. Each tool has a number key shortcut."
+      "title": "How can I adjust stroke color or thickness?",
+      "content": "Use the provided controls to switch between available colors and modify the stroke thickness."
     },
     {
-      "title": "How do I change the color or thickness of the stroke?",
-      "content": "Press 7 to cycle colors and 8 to change line thickness."
+      "title": "How do I clear all drawings on the screen?",
+      "content": "Press CMD or CTRL + K to remove all annotations from the overlay."
     },
     {
-      "title": "How do I clear everything I have drawn on the screen?",
-      "content": "Press CMD or CTRL + K to clear all annotations."
+      "title": "Does DrawPen include a whiteboard mode?",
+      "content": "Yes. Press CMD or CTRL + E to open a blank whiteboard canvas for free-form drawing."
     },
     {
-      "title": "How do I show or hide the toolbar?",
-      "content": "Press CMD or CTRL + T to toggle toolbar visibility."
+      "title": "Can DrawPen annotate over any application?",
+      "content": "Yes. DrawPen operates using a transparent overlay that appears above all other windows."
     },
     {
-      "title": "How do I open the Settings page?",
-      "content": "Press CMD or CTRL + , (comma) to open Settings."
+      "title": "How can I save my drawings?",
+      "content": "At the moment, annotations can be saved only by using your operating system’s screenshot functionality. Additional export options may be introduced in future versions."
     },
     {
-      "title": "Is there a whiteboard mode?",
-      "content": "Yes. Press CMD or CTRL + E to open a blank whiteboard canvas."
+      "title": "What customization options are available?",
+      "content": "Settings allow configuration of shortcuts, color schemes, stroke widths, interface elements, toolbar placement and other drawing preferences."
     },
     {
-      "title": "Can DrawPen annotate on top of any application?",
-      "content": "Yes. It draws on a transparent overlay above any content."
+      "title": "Which license governs DrawPen?",
+      "content": "DrawPen is released under the MIT license."
     },
     {
-      "title": "How can I save my annotations?",
-      "content": "Currently you must use your OS screenshot tool. Exporting features may come in future versions."
+      "title": "What should I do if the app behaves unexpectedly?",
+      "content": "Review existing GitHub Issues, and if the problem is not already tracked, create a new issue or submit a pull request with a fix."
     },
     {
-      "title": "Can I customize shortcuts, colors, and drawing options?",
-      "content": "Yes. Settings allow configuration of hotkeys, colors, widths, UI elements, toolbar position and more."
-    },
-    {
-      "title": "What license does DrawPen use?",
-      "content": "DrawPen is licensed under MIT."
-    },
-    {
-      "title": "What should I do if I encounter bugs or unexpected behavior?",
-      "content": "Check GitHub Issues, and if needed create a new issue or submit a PR."
-    },
-    {
-      "title": "Why should I use DrawPen?",
-      "content": "DrawPen is lightweight, cross-platform, ideal for presentations, coding sessions, tutorials, and technical explanations, and is fully open-source and extensible."
+      "title": "Why choose DrawPen?",
+      "content": "DrawPen is a cross-platform annotation tool designed for presentations, tutorials, coding sessions and technical explanations. It is fully open source, extensible and easy to integrate into any workflow."
     }
   ]
 }

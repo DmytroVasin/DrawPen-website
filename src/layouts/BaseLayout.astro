@@ -10,7 +10,7 @@ interface Props {
 const { lang = "en" } = Astro.props as Props;
 
 const METADATA = {
-  title: "DrawPen - simple screen annotation tool",
+  title: "DrawPen - screen annotation tool",
   description: "DrawPen is a free, open-source tool that lets you draw on top of any screen - perfect for presentations, classes, live coding and remote meetings.",
 }
 ---
@@ -38,7 +38,7 @@ const METADATA = {
       <Header />
 
       <main>
-        <div class="mt-34 max-w-[90%] mx-auto">
+        <div class="max-w-[90%] mx-auto">
           <slot />
         </div>
       </main>
