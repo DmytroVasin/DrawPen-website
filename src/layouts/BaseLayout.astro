@@ -8,10 +8,17 @@ interface Props {
 }
 
 const { lang = "en" } = Astro.props as Props;
+const BASE = Astro.url.origin; 
 
 const METADATA = {
   title: "DrawPen - screen annotation tool",
   description: "DrawPen is a free, open-source tool that lets you draw on top of any screen - perfect for presentations, classes, live coding and remote meetings.",
+  site_name: "DrawPen",
+  url: BASE,
+  img: `${BASE}/main.png`,
+  width: "1920",
+  height: "1080",
+  alt: "DrawPen App",
 }
 ---
 
@@ -25,24 +32,58 @@ const METADATA = {
     <meta property="og:title" content={METADATA.title} />
     <meta property="og:description" content={METADATA.description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://drawpen.app" />
-    <meta property="og:image" content="/og-drawpen.png" />
+    <meta property="og:url" content={METADATA.url} />
+    <meta property="og:site_name" content={METADATA.site_name} />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content={METADATA.img} />
+    <meta property="og:image:width" content={METADATA.width} />
+    <meta property="og:image:height" content={METADATA.height} />
+    <meta property="og:image:alt" content={METADATA.alt} />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={METADATA.title} />
+    <meta name="twitter:description" content={METADATA.description} />
+    <meta name="twitter:image" content={METADATA.img} />
+    <meta name="twitter:image:width" content={METADATA.width} />
+    <meta name="twitter:image:height" content={METADATA.height} />
+    <meta name="twitter:image:alt" content={METADATA.alt} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.svg" />
+    
+    <script src="/finisher-header.es5.min.js" defer></script>
   </head>
 
   <body class="bg-[#f8f8f8] font-[Inter]">
-      <Header />
+    <Header />
 
-      <main>
-        <div class="max-w-[90%] mx-auto">
-          <slot />
-        </div>
-      </main>
+    <main>
+      <div class="max-w-[90%] mx-auto">
+        <slot />
+      </div>
+    </main>
 
-      <Footer />
+    <Footer />
+    
+    <script>
+      new FinisherHeader({
+        count: 90,
+        size: { min: 1, max: 20, pulse: 0 },
+        speed: {
+          x: { min: 0, max: 0.4 },
+          y: { min: 0, max: 0.1 },
+        },
+        colors: {
+          background: "#2558a2",
+          particles: ["#ffffff", "#87ddfe", "#acaaff", "#1bffc2", "#f88aff"],
+        },
+        blending: "screen",
+        opacity: { center: 0, edge: 0.4 },
+        skew: 0,
+        shapes: ["c", "s", "t"],
+      });
+    </script>
   </body>
 </html>
