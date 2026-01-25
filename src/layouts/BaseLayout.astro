@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import PostHog from '../components/posthog.astro'
+
 import "../styles/global.css"
 
 interface Props {
@@ -8,7 +10,7 @@ interface Props {
 }
 
 const { lang = "en" } = Astro.props as Props;
-const BASE = Astro.url.origin; 
+const BASE = Astro.url.origin;
 
 const METADATA = {
   title: "DrawPen - screen annotation tool",
@@ -20,6 +22,7 @@ const METADATA = {
   height: "1080",
   alt: "DrawPen App",
 }
+
 ---
 
 <html lang={lang} class="scroll-smooth">
@@ -52,8 +55,10 @@ const METADATA = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.svg" />
-    
+
     <script src="/finisher-header.es5.min.js" defer></script>
+
+    {import.meta.env.PROD && <PostHog /> }
   </head>
 
   <body class="bg-[#f8f8f8] font-[Inter]">
@@ -66,7 +71,7 @@ const METADATA = {
     </main>
 
     <Footer />
-    
+
     <script>
       window.addEventListener('load', function () {
         if (window.FinisherHeader) {
