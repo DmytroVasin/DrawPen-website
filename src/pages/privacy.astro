@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    lang="en"
+    title="Privacy Policy"
+    description="How DrawPen handles local drawings, screenshots, and product analytics, and how to contact us about your data."
+    compactHeader
+>
+    <article class="privacy-policy mx-auto max-w-3xl pb-16 sm:pb-24" aria-labelledby="privacy-title">
+        <h1 id="privacy-title" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Privacy Policy</h1>
+        <p class="mt-4 text-sm text-gray-500">Last updated: <time datetime="2026-11-14">November 14, 2026</time></p>
+
+        <div class="mt-10 space-y-8 text-base leading-8 text-gray-600 sm:text-lg">
+            <section aria-labelledby="about-drawpen">
+                <h2 id="about-drawpen">About DrawPen</h2>
+                <p>DrawPen is a free, open-source screen annotation app. This policy explains how the app and this website handle your information. No account is required.</p>
+            </section>
+
+            <section aria-labelledby="data-collection">
+                <h2 id="data-collection">What data do we collect?</h2>
+                <p>Your drawings, screen contents, and screenshots are processed locally. They are not uploaded anywhere.</p>
+                <p>When Usage Analytics is enabled, the app sends usage information on launch, including a random installation identifier, app and system versions, processor architecture, and app preferences. Screenshot folder paths and folder access bookmarks are excluded.</p>
+                <p>The website collects information about visits and interactions, such as page views, clicks, and browser and device details. Cookies or local storage may be used to recognize a returning browser.</p>
+            </section>
+
+            <section aria-labelledby="third-parties">
+                <h2 id="third-parties">Do we use third-party services?</h2>
+                <p>Yes. Analytics services process usage information on servers in the United States and receive technical event details and your IP address. We use analytics only to improve DrawPen. We do not sell this data, use it for advertising, or combine it with data from other products.</p>
+                <p>The website also loads fonts from an external provider, which receives connection information such as your IP address.</p>
+            </section>
+
+            <section aria-labelledby="retention">
+                <h2 id="retention">How long do we keep data?</h2>
+                <p>Analytics events are retained for one year. Provider logs and associated records may have separate retention periods. Files and settings stored on your device remain there until you delete or reset them.</p>
+            </section>
+
+            <section aria-labelledby="your-rights">
+                <h2 id="your-rights">What rights do you have?</h2>
+                <p>You can ask about the information collected, how it is used, or request access to or deletion of your analytics data through <a href="https://github.com/DmytroVasin/DrawPen/issues">project support</a>.</p>
+                <p>You can turn off usage analytics at any time using the Usage Analytics switch in the app's settings. Website cookies and local storage can be managed through your browser settings.</p>
+            </section>
+
+            <section aria-labelledby="policy-updates">
+                <h2 id="policy-updates">How is this policy updated?</h2>
+                <p>Any changes will appear on this page, with the latest revision date shown above. Relevant changes will also be reflected in the app and its App Store information.</p>
+            </section>
+        </div>
+    </article>
+</BaseLayout>
+
+<style>
+    .privacy-policy h2 {
+        margin-bottom: 0.75rem;
+        color: var(--color-gray-900);
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: -0.025em;
+    }
+
+    .privacy-policy p + p {
+        margin-top: 0.75rem;
+    }
+
+    .privacy-policy a {
+        color: #2558a2;
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    .privacy-policy a:hover {
+        color: var(--color-blue-800);
+    }
+</style>

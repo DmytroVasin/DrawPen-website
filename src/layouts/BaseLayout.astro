@@ -7,16 +7,19 @@ import "../styles/global.css"
 
 interface Props {
   lang: string,
+  title?: string,
+  description?: string,
+  compactHeader?: boolean,
 }
 
-const { lang = "en" } = Astro.props as Props;
+const { lang = "en", title, description, compactHeader = false } = Astro.props as Props;
 const BASE = Astro.url.origin;
 
 const METADATA = {
-  title: "DrawPen - screen annotation tool",
-  description: "DrawPen is a free, open-source tool that lets you draw on top of any screen - perfect for presentations, classes, live coding and remote meetings.",
+  title: title ? `${title} - DrawPen` : "DrawPen - screen annotation tool",
+  description: description ?? "DrawPen is a free, open-source tool that lets you draw on top of any screen - perfect for presentations, classes, live coding and remote meetings.",
   site_name: "DrawPen",
-  url: BASE,
+  url: new URL(Astro.url.pathname, BASE).href,
   img: `${BASE}/main.png`,
   width: "1920",
   height: "1080",
@@ -62,7 +65,7 @@ const METADATA = {
   </head>
 
   <body class="bg-[#f8f8f8] font-[Inter]">
-    <Header />
+    <Header compact={compactHeader} />
 
     <main>
       <div class="max-w-[90%] mx-auto">
