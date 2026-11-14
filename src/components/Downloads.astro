@@ -1,26 +1,72 @@
-<section aria-labelledby="drawpen-title">
-    <header class="relative px-6 py-15 my-10 lg:px-8 border-y border-gray-300">
-        <div class="mx-auto max-w-2xl text-center">
-            <h2 id="drawpen-title" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Elevate your presentations
-            </h2>
-            <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-                Annotate your screen — all in one simple tool designed for clear and effective presentations.
-            </p>
+---
+const downloads = [
+    {
+        platform: "macOS",
+        icon: "/icons/macos.svg",
+        detail: "Apple silicon · .dmg",
+        href: "https://github.com/DmytroVasin/DrawPen/releases/latest/download/DrawPen-0.0.62-arm64.dmg",
+    },
+    {
+        platform: "Windows",
+        icon: "/icons/windows.svg",
+        detail: ".exe installer",
+        href: "https://github.com/DmytroVasin/DrawPen/releases/latest/download/DrawPen.Setup.exe",
+    },
+    {
+        platform: "Linux",
+        icon: "/icons/linux.svg",
+        detail: ".deb package",
+        href: "https://github.com/DmytroVasin/DrawPen/releases/latest/download/drawpen_0.0.62_amd64.deb",
+    },
+];
+---
 
-            <nav aria-label="Download DrawPen" class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
-                <a href="https://github.com/DmytroVasin/DrawPen/releases/latest/download/DrawPen.Setup.exe">
-                    <img src="/BadgeWindows.png" alt="Download for Windows" width="200" height="60" loading="lazy">
-                </a>
+<section id="download" aria-labelledby="drawpen-title" class="scroll-mt-8 pb-14 pt-6 sm:px-6 sm:pb-18">
+    <div class="mx-auto max-w-4xl text-center">
+        <h2 id="drawpen-title" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Elevate your presentations
+        </h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-8 text-gray-600">
+            Annotate your screen — all in one simple tool designed for clear and effective presentations.
+        </p>
 
-                <a href="https://github.com/DmytroVasin/DrawPen/releases/latest/download/DrawPen-0.0.62-arm64.dmg">
-                    <img src="/BadgeMacOS.png" alt="Download for macOS" width="200" height="60" loading="lazy">
-                </a>
+        <div aria-label="Get DrawPen" class="mx-auto mt-8 grid max-w-[420px] grid-cols-1 items-start justify-items-center gap-x-3 gap-y-6 min-[360px]:grid-cols-2 sm:gap-x-5 lg:flex lg:max-w-none lg:justify-center">
+            <div class="flex w-[156px] flex-col items-center gap-2.5 sm:w-[188px]">
+                <button type="button" disabled aria-describedby="mac-app-store-status" class="h-10 cursor-not-allowed rounded-lg sm:h-12">
+                    <img src="/icons/BadgeMacAppStore.svg" alt="Download on the Mac App Store" width="156" height="40" class="h-10 w-auto sm:h-12" />
+                </button>
+                <span id="mac-app-store-status" class="text-xs text-gray-500">Coming soon</span>
+            </div>
 
-                <a href="https://github.com/DmytroVasin/DrawPen/releases/latest/download/drawpen_0.0.62_amd64.deb">
-                    <img src="/BadgeLinux.png" alt="Download for Linux" width="200" height="60" loading="lazy">
-                </a>
-            </nav>
+            {downloads.map(({ platform, icon, detail, href }) => (
+                <div class="flex w-[156px] flex-col items-center gap-2.5 sm:w-40">
+                    <a href={href} aria-label={`Download DrawPen for ${platform} (${detail})`} class="flex h-10 w-full items-center justify-center gap-3 rounded-lg border border-black bg-black px-4 text-left text-white transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 sm:h-12">
+                        <img src={icon} alt="" width="24" height="24" class="size-6 shrink-0" aria-hidden="true" />
+                        <span>
+                            <span class="block text-[10px] leading-3 text-gray-300">Direct download</span>
+                            <span class="block text-lg font-medium leading-6">{platform}</span>
+                        </span>
+                    </a>
+                    <span class="text-xs text-gray-500">{detail}</span>
+                </div>
+            ))}
         </div>
-    </header>
+
+        <details class="group mx-auto mt-7 w-fit max-w-full">
+            <summary class="flex w-fit max-w-full cursor-pointer list-none flex-wrap items-center justify-center gap-x-1 gap-y-1 rounded-sm text-sm leading-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 [&::-webkit-details-marker]:hidden">
+                <span class="text-gray-500">Prefer the terminal?</span>
+                <span class="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 group-hover:decoration-gray-900">Install via Homebrew</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ml-1 text-gray-500 transition-transform group-open:rotate-180" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" />
+                </svg>
+            </summary>
+            <div class="mt-4 rounded-xl border border-gray-200 bg-white p-4 text-left">
+                <p class="mb-2 text-xs text-gray-500">Run in your macOS terminal:</p>
+                <code class="block select-all break-all font-mono text-sm leading-6 text-gray-900">brew install --cask drawpen</code>
+                <a href="https://formulae.brew.sh/cask/drawpen" class="mt-3 inline-block text-xs text-gray-500 underline underline-offset-4 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600">View on Homebrew</a>
+            </div>
+        </details>
+
+        <a href="https://github.com/DmytroVasin/DrawPen/releases/latest" class="mt-5 inline-block text-xs text-gray-500 underline underline-offset-4 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600">All downloads & release notes</a>
+    </div>
 </section>
